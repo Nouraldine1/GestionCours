@@ -59,6 +59,8 @@ public class App {
         System.out.println("7. Quitter");
         System.out.print("Votre choix : ");
     }
+ 
+
     private static void creerClasse() {
         Filliere filliere = null;
         while (filliere == null) {
