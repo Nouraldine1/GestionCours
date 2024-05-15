@@ -13,18 +13,18 @@ public class GestionClasses {
         classes = new ArrayList<>();
     }
 
-    public void creerClasse(String nomClasse, Filliere filliere, Niveau niveau) {
-        Classe classe = new Classe(nomClasse, filliere, niveau);
+    public void creerClasse(Filliere filliere, Niveau niveau) {
+        Classe classe = new Classe(filliere, niveau);
         classes.add(classe);
     }
 
     public void listerClasses() {
         if (classes.isEmpty()) {
-            System.out.println("Aucune classe n'a ete creee.");
+            System.out.println("Aucune classe n'a été créée.");
         } else {
             System.out.println("Liste des classes :");
             for (Classe classe : classes) {
-                System.out.println("Nom : " + classe.getNomClasse() + ", Filière : " + classe.getFilliere() + ", Niveau : " + classe.getNiveau());
+                System.out.println("Nom : " + classe.getNomClasse() + ", Filiere : " + classe.getFilliere() + ", Niveau : " + classe.getNiveau());
             }
         }
     }

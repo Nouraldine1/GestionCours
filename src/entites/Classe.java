@@ -8,11 +8,15 @@ public class Classe {
     private Filliere filliere;
     private Niveau niveau;
 
-    public Classe(String nomClasse, Filliere filliere, Niveau niveau) {
+    public Classe(Filliere filliere, Niveau niveau) {
         this.id = prochainId++;
-        this.nomClasse = nomClasse;
         this.filliere = filliere;
         this.niveau = niveau;
+        this.nomClasse = generateNomClasse(filliere, niveau);
+    }
+
+    private String generateNomClasse(Filliere filliere, Niveau niveau) {
+        return niveau.name() + "-" + filliere.name();
     }
 
     public String getNomClasse() {

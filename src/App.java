@@ -59,22 +59,65 @@ public class App {
         System.out.println("7. Quitter");
         System.out.print("Votre choix : ");
     }
-
     private static void creerClasse() {
-        System.out.print("Nom de la classe : ");
-        String nomClasse = scanner.nextLine();
-
-        System.out.print("Filière (IAGE ou MAE) : ");
-        String filiereString = scanner.nextLine();
-        Filliere filliere = Filliere.valueOf(filiereString.toUpperCase());
-
-        System.out.print("Niveau (L1, L2, L3, M1, M2) : ");
-        String niveauString = scanner.nextLine();
-        Niveau niveau = Niveau.valueOf(niveauString.toUpperCase());
-
-        gestionClasses.creerClasse(nomClasse, filliere, niveau);
-        System.out.println("Classe creee avec succès !");
+        Filliere filliere = null;
+        while (filliere == null) {
+            System.out.println("Choisissez la filière :");
+            System.out.println("1. IAGE");
+            System.out.println("2. MAE");
+            int choixFiliere = scanner.nextInt();
+            scanner.nextLine(); // Pour consommer le saut de ligne
+    
+            switch (choixFiliere) {
+                case 1:
+                    filliere = Filliere.IAGE;
+                    break;
+                case 2:
+                    filliere = Filliere.MAE;
+                    break;
+                default:
+                    System.out.println("Choix invalide. Veuillez choisir une option valide.");
+                    break;
+            }
+        }
+    
+        Niveau niveau = null;
+        while (niveau == null) {
+            System.out.println("Choisissez le niveau :");
+            System.out.println("1. L1");
+            System.out.println("2. L2");
+            System.out.println("3. L3");
+            System.out.println("4. M1");
+            System.out.println("5. M2");
+            int choixNiveau = scanner.nextInt();
+            scanner.nextLine(); // Pour consommer le saut de ligne
+    
+            switch (choixNiveau) {
+                case 1:
+                    niveau = Niveau.L1;
+                    break;
+                case 2:
+                    niveau = Niveau.L2;
+                    break;
+                case 3:
+                    niveau = Niveau.L3;
+                    break;
+                case 4:
+                    niveau = Niveau.M1;
+                    break;
+                case 5:
+                    niveau = Niveau.M2;
+                    break;
+                default:
+                    System.out.println("Choix invalide. Veuillez choisir une option valide.");
+                    break;
+            }
+        }
+    
+        gestionClasses.creerClasse(filliere, niveau);
+        System.out.println("Classe créée avec succès !");
     }
+    
 
     private static void creerCours() {
         System.out.print("Nom du cours : ");
@@ -92,7 +135,7 @@ public class App {
         }
 
         gestionCours.creerCours(nomCours, classesAssociees);
-        System.out.println("Cours cree avec succès !");
+        System.out.println("Cours cree avec succes !");
     }
 
     private static void creerSeance() {
@@ -112,7 +155,7 @@ public class App {
         String nomCours = scanner.nextLine();
 
         gestionSeances.creerSeance(date, heureDebut, heureFin, nomCours);
-        System.out.println("Seance creee avec succès !");
+        System.out.println("Seance creee avec succes !");
     }
 
     private static void listerClasses() {
