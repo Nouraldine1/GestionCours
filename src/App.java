@@ -64,7 +64,7 @@ public class App {
     private static void creerClasse() {
         Filliere filliere = null;
         while (filliere == null) {
-            System.out.println("Choisissez la filière :");
+            System.out.println("Choisissez la filiere :");
             System.out.println("1. IAGE");
             System.out.println("2. MAE");
             int choixFiliere = scanner.nextInt();
@@ -117,7 +117,7 @@ public class App {
         }
     
         gestionClasses.creerClasse(filliere, niveau);
-        System.out.println("Classe créée avec succès !");
+        System.out.println("Classe créée avec succes !");
     }
     
 

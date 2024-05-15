@@ -18,7 +18,7 @@ public class GestionCours {
 
     public void listerCours() {
         if (cours.isEmpty()) {
-            System.out.println("Aucun cours n'a été créé.");
+            System.out.println("Aucun cours n'a ete cree.");
         } else {
             System.out.println("Liste des cours :");
             for (Cours cours : cours) {
@@ -30,7 +30,7 @@ public class GestionCours {
                         System.out.println(classe);
                     }
                 } else {
-                    System.out.println("Aucune classe associée.");
+                    System.out.println("Aucune classe associee.");
                 }
                 System.out.println("--------------");
             }

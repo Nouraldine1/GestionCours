@@ -20,7 +20,7 @@ public class GestionClasses {
 
     public void listerClasses() {
         if (classes.isEmpty()) {
-            System.out.println("Aucune classe n'a été créée.");
+            System.out.println("Aucune classe n'a ete creee.");
         } else {
             System.out.println("Liste des classes :");
             for (Classe classe : classes) {

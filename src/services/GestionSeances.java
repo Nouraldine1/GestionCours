@@ -19,8 +19,13 @@ public class GestionSeances {
     }
 
     public void listerSeances() {
-        for (Seance seance : seances) {
-            System.out.println(seance.getDate() + " - " + seance.getHeureDebut() + " a " + seance.getHeureFin() + " : " + seance.getNomCours());
+        if (seances.isEmpty()) {
+            System.out.println("Aucune seance n'a ete creee.");
+        } else {
+            for (Seance seance : seances) {
+                System.out.println(seance.getDate() + " - " + seance.getHeureDebut() + " à " + seance.getHeureFin() + " : " + seance.getNomCours());
+            }
         }
     }
 }
+    
